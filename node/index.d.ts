@@ -10,4 +10,4 @@ export class ExternalObject<T> {
   }
 }
 export function bundle(): void
-export function bundless(): string
+export function bundless(): void

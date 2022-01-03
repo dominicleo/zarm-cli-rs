@@ -1,0 +1,8 @@
+@import "../style/themes/default.scss";
+
+.button {
+  color: $button-color;
+  &-primary {
+    color: blue;
+  }
+}

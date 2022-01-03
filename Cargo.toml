@@ -11,6 +11,9 @@ glob = "0.3.0"
 napi = { version = "2.0.2", default-features = false, features = ["napi4"] }
 napi-derive = "2.0.1"
 tokio = {version = "1.15.0", features = ["default", "fs"]}
+regex = "1.5.4"
+swc = "0.101.0"
+sass-rs = "0.2.2"
 
 [build-dependencies]
 napi-build = "1.2.1"

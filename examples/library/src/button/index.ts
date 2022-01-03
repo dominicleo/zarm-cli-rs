@@ -1,4 +1,4 @@
-import "./index.less";
+import "./index.scss";
 import Button from "./Button";
 
 export type { ButtonProps } from "./types.d";
