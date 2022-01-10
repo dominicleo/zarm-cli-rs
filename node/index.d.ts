@@ -9,5 +9,32 @@ export class ExternalObject<T> {
     [K: symbol]: T
   }
 }
-export function bundle(): void
-export function bundless(): void
+export function bundless(userOptions?: UserOptions | undefined | null): void
+export interface UserOptions {
+  /**
+   * bundler type
+   * @type "esm" | "cjs"
+   */
+  format?: string | undefined | null
+  /**
+   * root directory
+   * @default process.cwd()
+   */
+  root?: string | undefined | null
+  /**
+   * source code directory
+   * @default src
+   */
+  input?: string | undefined | null
+  /**
+   * output directory
+   * @default dist
+   */
+  output?: string | undefined | null
+  /** ignore specific directories & files via ignore syntax */
+  ignores?: Array<string> | undefined | null
+  /** configure module resolve alias */
+  alias?: Record<string, any> | undefined | null
+  /** define global constants for source code, like webpack */
+  define?: Record<string, any> | undefined | null
+}

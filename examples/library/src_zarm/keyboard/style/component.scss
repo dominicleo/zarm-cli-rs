@@ -1,0 +1,85 @@
+@import '../../button/style/mixins';
+
+@include b(keyboard) {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--za-keyboard-background);
+  color: var(--color-text);
+  user-select: none;
+
+  @include e(item) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: var(--za-keyboard-item-font-size);
+    user-select: none;
+    @include button-base();
+    @include button-theme(
+      var(--za-keyboard-item-background),
+      var(--za-button-default-border),
+      var(--za-button-default-color),
+      var(--za-button-default-active-background),
+      var(--za-button-default-active-border),
+      var(--za-button-default-active-color),
+      var(--za-button-default-background),
+      var(--za-button-default-border),
+      var(--color-text-disabled),
+      1,
+    );
+
+    @include m(ok) {
+      font-size: r(21);
+      @include button-theme(
+        var(--za-button-primary-background),
+        var(--za-button-primary-border),
+        var(--za-button-primary-color),
+        var(--za-button-primary-active-background),
+        var(--za-button-primary-active-border),
+        var(--za-button-primary-active-color),
+        var(--za-button-primary-background),
+        var(--za-button-primary-border),
+        var(--za-button-primary-color),
+        1,
+      );
+    }
+
+    @include m(disabled) {
+      &,
+      &:hover,
+      &:active {
+        background-color: var(--za-keyboard-background);
+      }
+    }
+  }
+
+  @include e(keys) {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+
+    @include e(item) {
+      width: 33.333333%;
+      height: var(--za-keyboard-item-height);
+      @include onepx(top left);
+
+      &:nth-of-type(3n+1) {
+        @include onepx(top);
+      }
+    }
+  }
+
+  @include e(handle) {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+
+    @include e(item) {
+      flex: 1;
+
+      &:first-of-type {
+        @include onepx(top left);
+      }
+    }
+  }
+}

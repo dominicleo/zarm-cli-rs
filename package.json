@@ -34,6 +34,9 @@
     "build:debug": "napi build --platform",
     "prepublishOnly": "napi prepublish -t npm",
     "version": "napi version",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "preexample:dev": "npm run build",
+    "example:dev": "pnpm -r --filter ./examples/normal run dev",
+    "example:build": "pnpm -r --filter ./examples/library run build"
   }
 }

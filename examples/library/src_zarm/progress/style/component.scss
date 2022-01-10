@@ -1,0 +1,145 @@
+@import 'mixins';
+
+@include b(progress) {
+  display: inline-block;
+  position: relative;
+
+  @include e(outer) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include e(text) {
+    display: inline-block;
+    margin-left: r(5);
+    font-size: r(14);
+  }
+
+  @include m(line) {
+    @include progress-theme('background-color');
+
+    @include m(lg) {
+      width: var(--za-progress-width-lg);
+    }
+
+    @include m(md) {
+      width: var(--za-progress-width-md);
+    }
+
+    @include m(sm) {
+      width: var(--za-progress-width-sm);
+    }
+
+    @include e(track) {
+      width: 100%;
+      height: 100%;
+      background: var(--za-progress-background);
+      overflow: hidden;
+    }
+
+    @include e(thumb) {
+      height: 100%;
+      width: 0;
+      transition: width .6s ease, background-color .6s ease;
+    }
+  }
+
+  @include m(circle) {
+    display: inline-block;
+    @include progress-type();
+    @include progress-theme('stroke');
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include e(text) {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      line-height: 1;
+      transform: translateY(-50%);
+    }
+
+    @include m(lg) {
+      width: var(--za-progress-size-lg);
+      height: var(--za-progress-size-lg);
+
+      @include e(text) {
+        font-size: var(--za-progress-font-size-circle-lg);
+      }
+    }
+
+    @include m(md) {
+      width: var(--za-progress-size-md);
+      height: var(--za-progress-size-md);
+
+      @include e(text) {
+        font-size: var(--za-progress-font-size-circle-md);
+      }
+    }
+
+    @include m(sm) {
+      width: var(--za-progress-size-sm);
+      height: var(--za-progress-size-sm);
+
+      @include e(text) {
+        font-size: var(--za-progress-font-size-circle-sm);
+      }
+    }
+  }
+
+  @include m(semi-circle) {
+    display: inline-block;
+    @include progress-type();
+    @include progress-theme('stroke');
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include e(text) {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      line-height: 1;
+    }
+
+    @include m(lg) {
+      width: var(--za-progress-size-lg);
+      height: calc(var(--za-progress-size-lg) / 2);
+
+      @include e(text) {
+        font-size: var(--za-progress-font-size-circle-lg);
+      }
+    }
+
+    @include m(md) {
+      width: var(--za-progress-size-md);
+      height: calc(var(--za-progress-size-md) / 2);
+
+      @include e(text) {
+        font-size: var(--za-progress-font-size-circle-md);
+      }
+    }
+
+    @include m(sm) {
+      width: var(--za-progress-size-sm);
+      height: calc(var(--za-progress-size-sm) / 2);
+
+      @include e(text) {
+        font-size: var(--za-progress-font-size-circle-sm);
+      }
+    }
+  }
+}

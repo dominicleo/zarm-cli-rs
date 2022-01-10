@@ -210,7 +210,6 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { bundle, bundless } = nativeBinding
+const { bundless } = nativeBinding
 
-module.exports.bundle = bundle
 module.exports.bundless = bundless

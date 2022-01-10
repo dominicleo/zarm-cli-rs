@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`KeyboardPicker snapshot renders correctly 1`] = `
+<KeyboardPicker
+  destroy={true}
+  type="number"
+  visible={false}
+>
+  <Popup
+    destroy={true}
+    lockScroll={true}
+    mask={false}
+    visible={false}
+  />
+</KeyboardPicker>
+`;

@@ -5,7 +5,6 @@ use std::io;
 use std::time;
 use std::path::{Path, PathBuf};
 use sass_rs::{compile_file, Options};
-use crate::bundless::Transformer;
 
 fn main() {
   let start = time::Instant::now();
